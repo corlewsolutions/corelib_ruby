@@ -1,5 +1,5 @@
 require "corelib_ruby/version"
+require "corelib_ruby/core_ext/string/base"
 
-module CorelibRuby
-  # Your code goes here...
-end
+# module CorelibRuby
+# end

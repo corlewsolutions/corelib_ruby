@@ -1,7 +1,12 @@
-#!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
+#!/usr/bin/env ruby
 
-bundle install
+require 'pathname'
 
-# Do any other automated setup that you need to do here
+# path to your application root.
+APP_ROOT = Pathname.new File.expand_path('../../',  __FILE__)
+
+Dir.chdir APP_ROOT do
+  # Remove Gemfile.lock and suppress output if it doesn't exist
+  system "rm Gemfile.lock 2> /dev/null"
+  system "bundle install"
+end

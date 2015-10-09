@@ -46,7 +46,7 @@ Open a console with either command
 
 Run rspec tests
 
-    $ bin/rspec
+    $ rspec
 
 Run rubocop
 

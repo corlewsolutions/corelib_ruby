@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+
+# path to your application root.
+APP_ROOT = Pathname.new File.expand_path('../../',  __FILE__)
+
+Dir.chdir APP_ROOT do
+  print "Running rubocop ... "
+
+  # Style Checks
+
+  command = "rubocop"
+  command += " --format simple --out rubocop/style-issues.txt"
+  command += " --format html --out rubocop/style-issues.html"
+  command += " --format offenses --out rubocop/style-counts.txt"
+  system command
+
+  # Lint Checks
+
+  command = "rubocop -l"
+  command += " --format simple --out rubocop/lint-issues.txt"
+  command += " --format html --out rubocop/lint-issues.html"
+  command += " --format offenses --out rubocop/lint-counts.txt"
+  system command
+
+  puts "done (results can be found in the 'rubocop' folder)"
+end
