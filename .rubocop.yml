@@ -33,3 +33,6 @@ Style/CommentAnnotation:
 
 Style/MultilineOperationIndentation:
   EnforcedStyle: indented
+
+Metrics/AbcSize:
+  Max: 17
