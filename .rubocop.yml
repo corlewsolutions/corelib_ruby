@@ -1,0 +1,35 @@
+AllCops:
+  Exclude:  # skip all of the following....
+    - db/**/*  # schema files are auto generated
+    - db/seeds/**/*  # skip seed files
+    - db/seeds/seed_data/**/*  # skip seed data
+    - bin/**/*  # bin files are auto generated
+    - /**/*.gemspec
+  RunRailsCops: true
+Documentation:
+  Enabled: false  # don't require docs @ top level of class
+Style/StringLiterals:
+  Enabled: false # TODO (Bobby): Disabled by Bobby.  Need to decide if we care about enforcing single or double quoted strings.
+Style/HashSyntax:
+  Enabled: false
+Style/SpaceAroundEqualsInParameterDefault:
+  Enabled: false
+Metrics/LineLength:
+  Max: 130
+# Ignore the "Use nested module/class definitions instead of compact style" cop
+#   because Rails, by default, generates the compact style.
+#
+#   TODO: (Jay) Consider adopting the nested at some point
+Style/ClassAndModuleChildren:
+  Enabled: false
+# Ignore the annotation keywords in comments. This allows use of something like
+#   `TODO (Foo):` which we would use, but breaks rubocop. Need to replace with
+#   `TODO: (Jay)` to make compatibile.
+#
+# TODO: (Jay) Consider re-enabling this to comply with the standard ruby
+#   conventions
+Style/CommentAnnotation:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
