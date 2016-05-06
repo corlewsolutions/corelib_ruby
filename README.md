@@ -33,6 +33,10 @@ Or install it yourself as:
 
 Browse the `/lib/corelib_ruby/` directory to find new methods; each method provides extensive document.  All of these methods are now available inside your application without any additional configuration.
 
+## Conventions
+
+All methods are prefixed with `co_` to help prevent collisions with other libraries.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake false` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
