@@ -7,7 +7,7 @@ class Hash
   # If key doesn't exist and not default is specified, a KeyError is raised
   # If key doesn't exists, there is no default, but a block is given, then
   # that block will be executed with the key.
-  def extract(*args)
+  def co_extract(*args)
     arg_length = args.length
     fail ArgumentError, "wrong number of arguments #{arg_length} for 1..2" if arg_length == 0 || arg_length > 2
     key = args[0]

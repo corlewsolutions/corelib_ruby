@@ -1,17 +1,17 @@
 class String
-  def first
+  def co_first
     empty? ? "" : self[0, 1]
   end
 
-  def first_or_nil
+  def co_first_or_nil
     empty? ? nil : self[0, 1]
   end
 
-  def last
+  def co_last
     empty? ? "" : self[-1, 1]
   end
 
-  def last_or_nil
+  def co_last_or_nil
     empty? ? nil : self[-1, 1]
   end
 
@@ -25,15 +25,15 @@ class String
   #    # => "This is ..."
   #    "This is a test".first_words(2, ellipses: " +++")
   #    # => "This is +++"
-  def first_words(n=nil, ellipses: false)
+  def co_first_words(n=nil, ellipses: false)
     new_str = n.nil? ? self : split[0...n].join(' ')
-    elip = determine_ellipses(new_str, ellipses)
+    elip = co_determine_ellipses(new_str, ellipses)
     new_str + "#{elip}"
   end
 
   private
 
-  def determine_ellipses(str, ellipses)
+  def co_determine_ellipses(str, ellipses)
     return "" if empty? || !ellipses
     return "" if str == self
     ellipses === true ? " ..." : ellipses.to_s
