@@ -1,4 +1,4 @@
-describe Hash do
+RSpec.describe Hash do
   describe "#co_co_extract" do
     context "returns" do
       it 'the value when key is present' do

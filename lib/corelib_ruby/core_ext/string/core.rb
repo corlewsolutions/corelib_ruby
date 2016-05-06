@@ -1,4 +1,8 @@
 class String
+  def co_not_empty?
+    !self.empty?
+  end
+
   def co_first
     empty? ? "" : self[0, 1]
   end

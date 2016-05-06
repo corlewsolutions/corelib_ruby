@@ -1,4 +1,4 @@
-describe String do
+RSpec.describe String do
   context "#co_all_spaces?" do
     it "returns correct values when no options present" do
       expect("This is a test".co_all_spaces?).to eq(false)

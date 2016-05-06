@@ -1,4 +1,4 @@
-describe String do
+RSpec.describe String do
   context "#co_first" do
     it "returns the first character of a non empty string" do
       expect("test".co_first).to eq("t")

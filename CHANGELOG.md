@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.0.0 (May 06, 2016)
+
+1. (New) Add **Object** methods: `co_not_nil?`
+2. (New) Add **NilClass** methods: `co_not_nil?`
+
 ## 0.0.2 (May 06, 2016)
 
 1. (New) Add **Array** methods: `#co_delete!`
