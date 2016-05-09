@@ -1,9 +1,11 @@
 # CHANGELOG
 
-## 1.0.0 (May 06, 2016)
+## 1.0.0 (May 09, 2016)
 
-1. (New) Add **Object** methods: `co_not_nil?`
-2. (New) Add **NilClass** methods: `co_not_nil?`
+1. (Change) Change method prefix to `cl_`.  This is a major breaking change.
+2. (New) Add optional method alias `_`.
+3. (New) Add many new methods.
+4. (New) Fill out test suite on methods.
 
 ## 0.0.2 (May 06, 2016)
 
