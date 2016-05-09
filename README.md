@@ -33,9 +33,13 @@ Or install it yourself as:
 
 Browse the `/lib/corelib_ruby/` directory to find new methods; each method provides extensive document.  All of these methods are now available inside your application without any additional configuration.
 
+## Finding Methods
+
+To find methods, read through the `lib/corelib_ruby/core_ext` folder.
+
 ## Conventions
 
-All methods are prefixed with `co_` to help prevent collisions with other libraries.
+All methods are prefixed with `cl_` to help prevent collisions with other libraries and to make it clear that the method is not part of Ruby core.  The unfortunate downside is it dirties up the up the method name.  To help clean things up, all methods have a more simple alias of just `_`.  For example, `String#cl_all_spaces?` is aliased to `String#_all_spaces?`.  Use whichever strategy you like, but we recommend that you pick one and try to be consistent.
 
 ## Development
 
