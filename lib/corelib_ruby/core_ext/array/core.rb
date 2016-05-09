@@ -1,11 +1,12 @@
 class Array
-  # Returns a hash by popping off the last item if it's a hash, or creating
-  # a new empty hash.  This method is useful when a method takes args and
-  # the last one can be an optional hash.
+  # Many methods take an optional hash argument to hold options for the method.  This method pops that hash off he arguments
+  # list if it exists or returns an empty hash.
   def cl_extract_options!
     last.is_a?(Hash) ? pop : {}
   end
 
+  # A simple helper to improve readability.
+  # [].cl_not_empty?    reads better than    ![].empty?
   def cl_not_empty?
     !empty?
   end

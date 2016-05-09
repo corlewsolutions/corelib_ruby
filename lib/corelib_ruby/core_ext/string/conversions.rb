@@ -3,15 +3,17 @@ class String
     self.cl_to_bool(options).cl_to_yes_no(options)
   end
 
+  # Forces a string to have at least one leading space.
   def cl_force_leading_space(even_when_empty: false)
     (return even_when_empty ? " " : "") if empty?
     cl_all_spaces? ? dup : " #{lstrip}"
   end
 
-  #true will always be returned if we can clearly match one of the true cases
-  #In unstrict mode, the string is assumed false if we cannot match true
-  #In strict mode, the string must clearly match a false condition to return false
-  #otherise an error is raised
+  # Convert a string to a boolean.
+  # true will always be returned if we can clearly match one of the true cases
+  # In unstrict mode, the string is assumed false if we cannot match true
+  # In strict mode, the string must clearly match a false condition to return false
+  # otherise an error is raised
   def cl_to_bool(options={})
     strip = options.fetch(:strip, true)
     strict = options.fetch(:strict, false)
@@ -35,7 +37,19 @@ class String
     self.concat(str)
   end
 
-  # Combines two strings together with a separator.
+  # Combines two strings together with a little more intelligence, using a separator.   This methods reduces
+  # much of the prep you may need to do before concatenating two strings and allows you do do the concatenation on a single line.
+  # Examples
+  #   "me".cl_combine("you")  =>   "me you"
+  #   "  me     ".cl_combine("    you", separator: "-")  =>   "me-you"
+  # Options
+  #   separator: The separate to place between the strings. (" " is the default)
+  #   prefix: A string that should appear in front of the final concatenation (no default)
+  #   suffix: A string that should appear at the end of the final concatenation (no default)
+  #   wrap: A boolean which helps control whether or not the prefix and suffix should be added (true is the default)
+  #   strip: Remove whitespace at the beginning and end of the strings before concatenating (true is the default)
+  #   if_empty: An alternative string to return if the resulting concatenation is empty.  This option is considered before the
+  #             prefix or suffix is added.  ("" is the default)
   def cl_combine(*args)
     options = args.cl_extract_options!
     raise ArgumentError, "You need to supply at least one string" if args.empty?

@@ -1,6 +1,5 @@
 class Array
-  # Public: Deletes items from the array, but raises an error if the item
-  # does not exist.
+  # Deletes items from the array, but raises an error if the item does not exist.
   #
   # obj: the obj to delete
   def cl_delete!(obj)
