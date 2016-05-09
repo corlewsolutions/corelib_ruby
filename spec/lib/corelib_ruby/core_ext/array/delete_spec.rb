@@ -19,5 +19,10 @@ RSpec.describe Array do
       expect(array.cl_delete!(:this_exists)).to eq(:this_exists)
       expect(array.cl_delete!(nil)).to eq(nil)
     end
+
+    it "is aliased" do
+      array._delete!(:this_exists)
+      expect(array).to eq([false, nil])
+    end
   end
 end

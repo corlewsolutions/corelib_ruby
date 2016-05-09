@@ -17,7 +17,7 @@ end
 
 module CorelibRuby
   def self.prepare
-    [NilClass, Object, Array, String, FalseClass, TrueClass, Hash].each do |class_name|
+    [NilClass, Object, Array, String, FalseClass, TrueClass, Hash, Numeric].each do |class_name|
       alias_methods_for_core_class(class_name)
     end
   end
