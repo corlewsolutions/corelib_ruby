@@ -1,5 +1,5 @@
 class Hash
-  def co_not_empty?
+  def cl_not_empty?
     !empty?
   end
 end

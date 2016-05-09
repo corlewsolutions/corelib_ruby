@@ -1,7 +1,7 @@
 RSpec.describe Object do
-  describe "#co_not_nil?" do
+  describe "#cl_not_nil?" do
     it 'works' do
-      expect([].co_not_nil?).to be true
+      expect([].cl_not_nil?).to be true
     end
   end
 end

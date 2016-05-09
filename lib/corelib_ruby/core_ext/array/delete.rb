@@ -3,7 +3,7 @@ class Array
   # does not exist.
   #
   # obj: the obj to delete
-  def co_delete!(obj)
+  def cl_delete!(obj)
     # do this check first only if the obj is nil because the
     # cost of include? rises linerarly with the size of the array
     raise ArgumentError if obj.nil? && !include?(nil)

@@ -1,9 +1,9 @@
 class NilClass
-  def co_not_nil?
+  def cl_not_nil?
     false
   end
 
-  def co_to_yes_no(options={})
+  def cl_to_yes_no(options={})
     options.fetch(:if_nil, "")
   end
 end

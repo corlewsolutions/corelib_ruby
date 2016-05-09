@@ -1,21 +1,21 @@
 class String
-  def co_not_empty?
+  def cl_not_empty?
     !self.empty?
   end
 
-  def co_first
+  def cl_first
     empty? ? "" : self[0, 1]
   end
 
-  def co_first_or_nil
+  def cl_first_or_nil
     empty? ? nil : self[0, 1]
   end
 
-  def co_last
+  def cl_last
     empty? ? "" : self[-1, 1]
   end
 
-  def co_last_or_nil
+  def cl_last_or_nil
     empty? ? nil : self[-1, 1]
   end
 
@@ -29,15 +29,15 @@ class String
   #    # => "This is ..."
   #    "This is a test".first_words(2, ellipses: " +++")
   #    # => "This is +++"
-  def co_first_words(n=nil, ellipses: false)
+  def cl_first_words(n=nil, ellipses: false)
     new_str = n.nil? ? self : split[0...n].join(' ')
-    elip = co_determine_ellipses(new_str, ellipses)
+    elip = cl_determine_ellipses(new_str, ellipses)
     new_str + "#{elip}"
   end
 
   private
 
-  def co_determine_ellipses(str, ellipses)
+  def cl_determine_ellipses(str, ellipses)
     return "" if empty? || !ellipses
     return "" if str == self
     ellipses === true ? " ..." : ellipses.to_s

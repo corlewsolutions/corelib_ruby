@@ -1,5 +1,5 @@
 class Object
-  def co_not_nil?
+  def cl_not_nil?
     true
   end
 end
