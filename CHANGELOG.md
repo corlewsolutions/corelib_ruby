@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.0 (May 20, 2016)
+
+1. (New) Add hash `Hash#cl_add_if_absent` and `Hash#cl_update_if_present`.
+
 ## 1.0.0 (May 09, 2016)
 
 1. (Change) Change method prefix to `cl_`.  This is a major breaking change.
