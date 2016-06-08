@@ -12,4 +12,14 @@ RSpec.describe TrueClass do
       expect(true._to_yes_no).to eq("Yes")
     end
   end
+
+  describe "#cl_to_bool" do
+    it 'converts correctly' do
+      expect(true.cl_to_bool).to be true
+    end
+
+    it 'is aliased' do
+      expect(true._to_bool).to be true
+    end
+  end
 end

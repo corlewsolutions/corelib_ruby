@@ -4,4 +4,9 @@ class TrueClass
   def cl_to_yes_no(options={})
     options.fetch(:if_yes, "Yes")
   end
+
+  # Convert true to true.  This method is added for polymorphism with other cl_to_bool methods.
+  def cl_to_bool
+    self
+  end
 end
