@@ -66,4 +66,26 @@ RSpec.describe Hash do
     end
   end
 
+  describe "cl_fetch_ignoring_nil" do
+    it "returns default value if key is missing" do
+      hash = {}
+      expect(hash.cl_fetch_ignoring_nil("foo", "bar")).to eq("bar")
+    end
+
+    it "returns default value if key is present and value is nil" do
+      hash = {"foo" => nil}
+      expect(hash.cl_fetch_ignoring_nil("foo", "bar")).to eq("bar")
+    end
+
+    it "returns non nil value if key is present" do
+      hash = {"foo" => "goo"}
+      expect(hash.cl_fetch_ignoring_nil("foo", "bar")).to eq("goo")
+    end
+
+    it "is aliased" do
+      hash = {}
+      expect(hash._fetch_ignoring_nil("foo", "bar")).to eq("bar")
+    end
+  end
+
 end

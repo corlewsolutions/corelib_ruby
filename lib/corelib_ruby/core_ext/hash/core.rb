@@ -19,4 +19,10 @@ class Hash
     current.nil? ? nil : (self[key] = value)
   end
 
+  # This method works similiar to fetch, however it handles the case where a key is already present
+  # in the hash, but has a value of nil.  This method will return the default instead of returning the nil.
+  def cl_fetch_ignoring_nil(key, default)
+    val = fetch(key, default)
+    val.nil? ? default : val
+  end
 end

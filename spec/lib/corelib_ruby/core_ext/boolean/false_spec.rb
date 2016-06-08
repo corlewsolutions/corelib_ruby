@@ -1,5 +1,5 @@
 RSpec.describe FalseClass do
-  describe "#to_yes_no" do
+  describe "#cl_to_yes_no" do
     it 'converts correctly with default options' do
       expect(false.cl_to_yes_no).to eq("No")
     end
@@ -9,6 +9,16 @@ RSpec.describe FalseClass do
 
     it 'is aliased' do
       expect(false._to_yes_no).to eq("No")
+    end
+  end
+
+  describe "#cl_to_bool" do
+    it 'converts correctly' do
+      expect(false.cl_to_bool).to be false
+    end
+
+    it 'is aliased' do
+      expect(false._to_bool).to be false
     end
   end
 end
