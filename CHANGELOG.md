@@ -3,7 +3,7 @@
 ## 1.2.0 (Jun 08, 2016)
 
 1. (New) Add `FalseClass#_cl_to_bool` and `TrueClass#cl_to_bool`.
-2. (New)
+2. (New) Add `Hash#cl_fetch_ignoring_nil`.
 
 ## 1.1.0 (May 20, 2016)
 
